@@ -44,7 +44,7 @@ public class main {
                 return Integer.compare(o1.getPublicationDate(),o2.getPublicationDate());
             }
         };
-        Set<Books> booksByDate = new TreeSet<>(dateComparator); //Created set by pageComparetor.
+        Set<Books> booksByDate = new TreeSet<>(dateComparator); //Created set by dateComparetor.
         booksByDate.addAll(booksByTitle);
         System.out.println("Sorted by year ascently : ");
         for(Books book : booksByDate){
