@@ -7,11 +7,11 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         Set<Books> booksByTitle = new TreeSet<>(); //Treeset Books created.
 
-        Books book1 = new Books("Pride and Prejudice", 279, "Jane Austen", java.sql.Date.valueOf("1813-01-28"));
-        Books book2 = new Books("Outlander", 627, "Diana Gabaldon", java.sql.Date.valueOf("1991-06-01"));
-        Books book3 = new Books("Me Before You", 480, "Jojo Moyes", java.sql.Date.valueOf("2012-01-05"));
-        Books book4 = new Books("The Notebook", 214, "Nicholas Sparks", java.sql.Date.valueOf("1996-10-01"));
-        Books book5 = new Books("The Time Traveler's Wife", 546, "Audrey Niffenegger", java.sql.Date.valueOf("2003-09-01"));
+        Books book1 = new Books("Pride and Prejudice", 279, "Jane Austen", 1813);
+        Books book2 = new Books("Outlander", 627, "Diana Gabaldon", 1991);
+        Books book3 = new Books("Me Before You", 480, "Jojo Moyes", 2012);
+        Books book4 = new Books("The Notebook", 214, "Nicholas Sparks", 1996);
+        Books book5 = new Books("The Time Traveler's Wife", 546, "Audrey Niffenegger", 2003);
         System.out.println("Books sorted by title A to Z: ");
         //The books are created manually.
         booksByTitle.add(book1);
@@ -38,12 +38,19 @@ public class main {
             System.out.println(book);
         }
 
-//        Comparator<Books> dateComparator = new Comparator<Books>() {
-//            @Override
-//            public int compare(Books o1, Books o2) {
-//                return Integer.compare()
-//            }
-//        }
+        Comparator<Books> dateComparator = new Comparator<Books>() {
+            @Override
+            public int compare(Books o1, Books o2) {
+                return Integer.compare(o1.getPublicationDate(),o2.getPublicationDate());
+            }
+        };
+        Set<Books> booksByDate = new TreeSet<>(dateComparator); //Created set by pageComparetor.
+        booksByDate.addAll(booksByTitle);
+        System.out.println("Sorted by year ascently : ");
+        for(Books book : booksByDate){
+            System.out.println(book);
+        }
+
     }
 }
 

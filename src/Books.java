@@ -4,20 +4,20 @@ import java.util.Date;
     public String title;
     public int pages;
     public String author;
-    public Date publicationDate;
+    public int publicationDate;
 
-     public Books(String title, int pages, String author, Date publicationDate) {
+     public Books(String title, int pages, String author, int publicationDate) {
          this.title = title;
          this.pages = pages;
          this.author = author;
          this.publicationDate = publicationDate;
      }
 
-     public Date getPublicationDate() {
+     public int getPublicationDate() {
          return publicationDate;
      }
 
-     public void setPublicationDate(Date publicationDate) {
+     public void setPublicationDate(int publicationDate) {
          this.publicationDate = publicationDate;
      }
 
